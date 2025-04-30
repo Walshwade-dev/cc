@@ -87,7 +87,7 @@ export function setupTally() {
 
         for (let j = 0; j < bundles; j++) {
           const img = document.createElement("img");
-          img.src = "../../assets/images/tally5.png";
+          img.src = "../../assets/images/transparent.png";
           img.alt = "tally5";
           img.classList.add("tally-img");
           wrapper.appendChild(img);
