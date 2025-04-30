@@ -1,0 +1,33 @@
+.welcome-container {
+    background: var(--bg-color);
+    flex-direction: column;
+
+    height: 100vh;
+    width: 100%;
+}
+
+
+.welcome-container h1 {
+    width: 80%;
+    font-size: 2.2rem;
+    margin: 2rem 0;
+}
+
+.welcome-container p {
+    width: 80%;
+    font-size: 1.2rem;
+    margin: 0 0 2rem 0;
+}
+
+.welcome-container button {
+    width: 80%;
+    margin: 2rem 0 0 0;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+}
+
+.welcome-container button:hover,
+.welcome-container:focus {
+    background-color: var(--btn-bg-hover);
+    letter-spacing: 0.15rem;
+}

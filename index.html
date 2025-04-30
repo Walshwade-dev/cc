@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>census tally</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <!-- Login Section -->
+    <section id="login" class="page login">
+      <div class="login-container container-sm flex-center">
+          <h1>Census tally login</h1>
+
+          <p>
+              Enter your credentials to login.
+          </p>
+          <form id="login-form">
+              <div class="form-username__container">
+                  <label for="username">Username</label><br/>
+                  <input type="text" id="username" name="username" placeholder="Jane Doe" autocomplete="username" required />
+              </div>
+
+              <div class="login-form-password__container">
+                  <label for="role">Role</label><br/>
+                  <input type="text" id="role" name="role" placeholder="General Assistant" autocomplete="organization-title" required />
+              </div>
+              
+              <div class="login-form-password__container">
+                  <label for="password">Password</label><br/>
+                  <input type="password" id="password" name="password" placeholder="********" autocomplete="current-password" required />
+              </div>
+
+              <button type="submit" class="login-link">Login</button>
+          </form>
+          <p id="login-message"></p>
+      </div>
+    </section>
+
+    <!-- End Login Section -->
+
+    <!-- welcome Section -->
+    <section id="welcome" class="page container-sm flex-center">
+      <div class="welcome-container container-sm flex-center">
+        <h1 id="greeting"></h1>
+        <p id="user-role"></p>
+        <p id="shift-info"></p>
+        <button id="go-to-tally">next</button>
+      </div>
+    </section>
+    
+    <!-- End welcome Section -->
+
+    <!-- Tally Section -->
+    <section id="tally" class="page container-sm flex-center" style="display: none;">
+      <header class="mobile-container flex-center">
+        <h1>Census Tally App</h1>
+      </header>
+
+      <main id="pdfContent" class="mobile-container">
+        <!-- header info -->
+        <section class="tally-header">
+          <h1>Vehicle Census Tally Form</h1>
+          <div class="header-details">
+            <span><strong>Name:</strong> <span id="user-name">Loading...</span></span>
+            <span><strong>Role:</strong> <span id="user-role">Loading...</span></span>
+            <span><strong>Shift:</strong> <span id="user-shift">Loading...</span></span><br/>
+            <span><strong>Station:</strong> Kenya Weighbridge</span><br/>
+            <span id="currentTime"><strong>Time:</strong> --:--</span>
+          </div>
+        </section>
+
+        <!-- table -->
+        <section class="census-table">
+          <table id="tallyTable">
+            <thead>
+              <tr>
+                <th>Time slot</th>
+                <th>Buses (≥3500)</th>
+                <th>Truck (≥3500 ≤7000)</th>
+                <th>Trucks (≥7000kgs)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Tally rows will go here -->
+            </tbody>
+          </table>
+        </section>
+
+        <!-- summary and verification -->
+        <section id="pdfSummary"></section>
+
+        <section class="verification-form">
+          <h2>Verification by Assistant Weighbridge manager</h2>
+          <form id="verifyForm">
+            <label>
+              Full Name:
+              <input type="text" name="officerName" required>
+            </label>
+            <label>
+              Role:
+              <input type="text" name="officerRole" value="Assistant Manager" disabled required>
+            </label>
+            <label>
+              Remarks:
+              <textarea name="remarks" rows="3" placeholder="Remarks on tally..."></textarea>
+            </label>
+            <input type="hidden" id="verificationTime" name="verificationTime">
+            <p id="timestampDisplay"></p>
+
+            <button type="button" id="downloadPDF">Download as PDF</button>
+          </form>
+        </section>
+      </main>
+    </section>
+
+    <!-- End tally Section -->
+
+    <script type="module" src="./scripts/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+@import url('/styles/login.css');
+@import url('/styles/welcome.css');
+@import url('/styles/tally.css');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+    --bg-color: #caf0f8;
+    --text-color: #023e8a;
+    --accent-1: #4895ef;
+    --accent-2: #fcd5ce;
+    --btn-bg: #00afb9;
+    --btn-text: #ade8f4;
+    --btn-bg-hover: #2a6f97;
+  }
+  
+  /* Dark Mode – based on system preference */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-color: #304c89;     /* Rich Black */
+      --text-color: #9eb7e5;   /* Off-white */
+      --accent-1: #c0b7b1;     /* Dark Teal */
+      --accent-2: #c69c72;     /* Deep Ruby */
+      --btn-bg: #1e96fc;       /* Forest Green */
+      --btn-text: #a2d6f9;
+      --btn-bg-hover:#0088ff;
+    }
+  }
+
+  .page {
+    display: none;
+  }
+  
+  .page.active {
+    display: block;
+  }
+
+  #welcome, #tally {
+    display: none;
+  }
+  
+
+  body {
+    background-color: var(--accent-2);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  button {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  button a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    color: #fff;
+  }
+
+  button:hover a,
+  button:focus a {
+    letter-spacing: 0.15rem;
+  }  
+
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-sm {
+    max-width: 412px;
+    margin: 0 auto;
+}
+
+.container-md {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+
+h1 {
+    font-family: "Nunito", sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+p {
+    font-family: "Montserrat", sans-serif;
+    
+  }
+
